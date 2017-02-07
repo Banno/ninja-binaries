@@ -1,0 +1,29 @@
+{
+  "name": "ninja-binaries",
+  "version": "1.7.2",
+  "description": "Contains binaries of the Ninja build system",
+  "bin": {
+    "ninja": "./ninja"
+  },
+  "scripts": {
+    "preinstall": "node create-symlink.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banno/ninja-binaries.git"
+  },
+  "keywords": [
+    "ninja",
+    "build",
+    "binaries"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "author": "Eric Heikes <eric.heikes@banno.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/banno/ninja-binaries/issues"
+  },
+  "homepage": "https://github.com/banno/ninja-binaries"
+}
