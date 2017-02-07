@@ -5,9 +5,6 @@
   "bin": {
     "ninja": "./ninja"
   },
-  "scripts": {
-    "preinstall": "node create-symlink.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/banno/ninja-binaries.git"

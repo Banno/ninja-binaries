@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+//
+// Wrapper to call the correct binary, based on the platform.
+//
+const spawn = require('child_process').spawn;
+const os = require('os');
+const path = require('path');
+
+let binary;
+if (os.platform() === 'darwin') {
+	binary = 'ninja-mac';
+} else if (os.platform() === 'win32') {
+	binary = 'ninja-win.exe';
+} else {
+	binary = 'ninja-linux';
+}
+
+let cmd = path.join(__dirname, 'binaries', binary);
+let args = process.argv.slice(2);
+spawn(cmd, args, {
+	shell: true,
+	stdio: 'inherit'
+});
