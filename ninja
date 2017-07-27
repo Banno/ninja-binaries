@@ -17,7 +17,14 @@ if (os.platform() === 'darwin') {
 
 let cmd = path.join(__dirname, 'binaries', binary);
 let args = process.argv.slice(2);
-spawn(cmd, args, {
+let ps = spawn(cmd, args, {
 	shell: true,
 	stdio: 'inherit'
+});
+ps.on('error', function(code) {
+	process.stderr.write('Unable to spawn ninja\n');
+	process.exit(255); // use a code not used by Ninja
+});
+ps.on('close', function(code) {
+	process.exit(code);
 });
