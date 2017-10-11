@@ -17,7 +17,7 @@ if (os.platform() === 'darwin') {
 
 let cmd = path.join(__dirname, 'binaries', binary);
 let args = process.argv.slice(2);
-let ps = spawn(cmd, args, {
+let ps = spawn(`"${cmd}"`, args, {
 	shell: true,
 	stdio: 'inherit'
 });
