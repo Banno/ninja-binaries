@@ -30,4 +30,5 @@ do
 	fi
 	NEW_NAME=`basename "$FILE" .zip`
 	mv "binaries/ninja$EXE_SUFFIX" "binaries/$NEW_NAME$EXE_SUFFIX"
+	chmod a+x "binaries/$NEW_NAME$EXE_SUFFIX"
 done
