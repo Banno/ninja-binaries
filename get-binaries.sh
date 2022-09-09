@@ -22,13 +22,12 @@ declare -a pkgs=(
 # Download & save the binaries.
 for FILE in "${pkgs[@]}"
 do
-	curl -L "https://github.com/ninja-build/ninja/releases/download/$1/$FILE" | tar -x -C binaries
+	NEW_NAME=`basename "$FILE" .zip`
 	if [[ "$FILE" == "ninja-win.zip" ]] ; then
 		EXE_SUFFIX=".exe"
 	else
 		EXE_SUFFIX=""
 	fi
-	NEW_NAME=`basename "$FILE" .zip`
-	mv "binaries/ninja$EXE_SUFFIX" "binaries/$NEW_NAME$EXE_SUFFIX"
+	curl -L "https://github.com/ninja-build/ninja/releases/download/$1/$FILE" | gunzip > "binaries/$NEW_NAME$EXE_SUFFIX"
 	chmod a+x "binaries/$NEW_NAME$EXE_SUFFIX"
 done
