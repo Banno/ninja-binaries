@@ -10,7 +10,9 @@ $ npm install ninja-binaries -g
 
 ## Development
 
-To update the Ninja binaries in the project, run `./get-binaries.sh VERSION` where `VERSION` is the version of Ninja you want:
+You can check the [Github repo](https://github.com/ninja-build/ninja/releases) or follow the [Atom feed](https://github.com/ninja-build/ninja/releases.atom) of the Ninja project for new releases.
+
+To update the Ninja binaries in this project, run `./get-binaries.sh VERSION` where `VERSION` is the version of Ninja you want:
 
 ```
 $ ./get-binaries.sh v1.7.2
