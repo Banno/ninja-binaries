@@ -1,6 +1,6 @@
 {
   "name": "ninja-binaries",
-  "version": "1.12.0",
+  "version": "1.12.1",
   "description": "Contains binaries of the Ninja build system",
   "bin": {
     "ninja": "./ninja"
